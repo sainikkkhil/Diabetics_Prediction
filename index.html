@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p.prediction {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction</h1>
+        <form id="prediction-form">
+            <label for="pregnancies">Number of Pregnancies:</label>
+            <input type="number" id="pregnancies" name="pregnancies" required>
+
+            <label for="glucose">Glucose Level (mg/dL):</label>
+            <input type="number" id="glucose" name="glucose" required>
+
+            <label for="blood-pressure">Blood Pressure (mm Hg):</label>
+            <input type="number" id="blood-pressure" name="blood-pressure" required>
+
+            <label for="skin-thickness">Skin Thickness (mm):</label>
+            <input type="number" id="skin-thickness" name="skin-thickness" required>
+
+            <label for="insulin">Insulin Level (mu U/ml):</label>
+            <input type="number" id="insulin" name="insulin" required>
+
+            <label for="bmi">BMI:</label>
+            <input type="number" id="bmi" name="bmi" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <button type="button" id="predict-button">Predict</button>
+        </form>
+        <p class="prediction" id="prediction-result"></p>
+    </div>
+    <script>
+        // You can add JavaScript code here to handle the form submission and prediction display.
+        document.getElementById('predict-button').addEventListener('click', function() {
+            // Get input values from the form
+            const pregnancies = parseFloat(document.getElementById('pregnancies').value);
+            const glucose = parseFloat(document.getElementById('glucose').value);
+            const bloodPressure = parseFloat(document.getElementById('blood-pressure').value);
+            const skinThickness = parseFloat(document.getElementById('skin-thickness').value);
+            const insulin = parseFloat(document.getElementById('insulin').value);
+            const bmi = parseFloat(document.getElementById('bmi').value);
+            const age = parseFloat(document.getElementById('age').value);
+
+            // Perform prediction using your machine learning model (you'll need to import it here)
+
+            // Display the prediction result
+            const predictionResult = "Diabetes Prediction: Not Implemented Yet"; // Replace with the actual prediction
+            document.getElementById('prediction-result').textContent = predictionResult;
+        });
+    </script>
+</body>
+</html>
